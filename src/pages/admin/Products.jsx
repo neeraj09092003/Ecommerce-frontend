@@ -36,7 +36,7 @@ const Products = () => {
   const fetchAdminProducts = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/products", {
+      const res = await axios.get("http://ecommerce-backend-291k.onrender.com/api/products", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -98,7 +98,7 @@ const Products = () => {
     }
     setAdding(true);
     try {
-      await axios.post("http://localhost:5000/api/products", newProduct, {
+      await axios.post("http://ecommerce-backend-291k.onrender.com/api/products", newProduct, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("✅ Product added!");
@@ -146,7 +146,7 @@ const Products = () => {
     setEditing(true);
     try {
       await axios.put(
-        `http://localhost:5000/api/products/${editingProduct._id}`,
+        `http://ecommerce-backend-291k.onrender.com/api/products/${editingProduct._id}`,
         editForm,
         {
           headers: {
@@ -168,7 +168,7 @@ const Products = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/products/${id}`, {
+      await axios.delete(`http://ecommerce-backend-291k.onrender.com/api/products/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProducts(products.filter((p) => p._id !== id));

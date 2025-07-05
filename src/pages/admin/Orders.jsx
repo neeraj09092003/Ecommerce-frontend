@@ -8,7 +8,7 @@ const Orders = () => {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/orders", {
+      const res = await axios.get("http://ecommerce-backend-291k.onrender.com/api/orders", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setOrders(res.data);
@@ -27,7 +27,7 @@ const Orders = () => {
   const updateStatus = async (orderId, newStatus) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/orders/${orderId}/status`,
+        `http://ecommerce-backend-291k.onrender.com/api/orders/${orderId}/status`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
