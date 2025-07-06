@@ -29,6 +29,10 @@ function ProductCard({ product }) {
         src={product.image}
         alt={product.name}
         className="w-full h-48 object-cover rounded-t"
+        onError={(e) => {
+    e.target.onerror = null;
+    e.target.src = "https://placehold.co/150x150";
+  }}
       />
       <div className="p-4">
         <h2 className="text-lg font-semibold">{product.name}</h2>
