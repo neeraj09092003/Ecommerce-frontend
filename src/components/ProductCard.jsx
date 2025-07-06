@@ -8,7 +8,7 @@ function ProductCard({ product }) {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://ecommerce-backend-291k.onrender.com/api/cart",
+        "https://ecommerce-backend-291k.onrender.com/api/cart",
         { productId: product._id, quantity: 1 },
         {
           headers: {
