@@ -8,7 +8,7 @@ const Orders = () => {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get("https://ecommerce-backend-291k.onrender.com/api/orders", {
+      const res = await axios.get("https://ecommercebackend-grx8.onrender.com/api/orders", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setOrders(res.data);
@@ -27,7 +27,7 @@ const Orders = () => {
   const updateStatus = async (orderId, newStatus) => {
     try {
       await axios.put(
-        `https://ecommerce-backend-291k.onrender.com/api/orders/${orderId}/status`,
+        `https://ecommercebackend-grx8.onrender.com/api/orders/${orderId}/status`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );

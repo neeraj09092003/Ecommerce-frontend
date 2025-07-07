@@ -16,7 +16,7 @@ const Signup = () => {
     setError("");
     try {
       const res = await axios.post(
-        "https://ecommerce-backend-291k.onrender.com/api/auth/register",
+        "https://ecommercebackend-grx8.onrender.com/api/auth/register",
         form
       );
 

@@ -13,7 +13,7 @@ const Dashboard = () => {
 
   const fetchStats = async () => {
     try {
-      const res = await axios.get("https://ecommerce-backend-291k.onrender.com/api/admin/stats", {
+      const res = await axios.get("https://ecommercebackend-grx8.onrender.com/api/admin/stats", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

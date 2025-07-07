@@ -23,7 +23,7 @@ const Cart = () => {
   // Fetch cart from backend
   const fetchCart = async () => {
     try {
-      const res = await axios.get("https://ecommerce-backend-291k.onrender.com/api/cart", {
+      const res = await axios.get("https://ecommercebackend-grx8.onrender.com/api/cart", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCart(res.data);
@@ -59,7 +59,7 @@ const Cart = () => {
 
     try {
       await axios.post(
-        "https://ecommerce-backend-291k.onrender.com/api/cart",
+        "https://ecommercebackend-grx8.onrender.com/api/cart",
         {
           productId,
           quantity: updatedItem.quantity,
@@ -77,7 +77,7 @@ const Cart = () => {
   // Remove item from cart
   const removeFromCart = async (productId) => {
     try {
-      await axios.delete(`https://ecommerce-backend-291k.onrender.com/api/cart/${productId}`, {
+      await axios.delete(`https://ecommercebackend-grx8.onrender.com/api/cart/${productId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCart({
@@ -101,7 +101,7 @@ const Cart = () => {
     setPlacingOrder(true);
     try {
       await axios.post(
-        "https://ecommerce-backend-291k.onrender.com/api/orders",
+        "https://ecommercebackend-grx8.onrender.com/api/orders",
         {
           shippingInfo: shipping,
           paymentMethod,

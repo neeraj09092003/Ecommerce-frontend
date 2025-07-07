@@ -31,7 +31,7 @@ export default function Login() {
     setError("");
     try {
       const res = await axios.post(
-        "https://ecommerce-backend-291k.onrender.com/api/auth/login",
+        "https://ecommercebackend-grx8.onrender.com/api/auth/login",
         { email, password }
       );
       localStorage.setItem("token", res.data.token);
@@ -47,7 +47,7 @@ export default function Login() {
 
   // Google login handler (redirects to backend OAuth)
   const handleGoogleLogin = () => {
-    window.location.href = "https://ecommerce-backend-291k.onrender.com/api/auth/google";
+    window.location.href = "https://ecommercebackend-grx8.onrender.com/api/auth/google";
   };
 
   return (

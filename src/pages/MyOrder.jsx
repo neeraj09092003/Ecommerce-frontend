@@ -8,7 +8,7 @@ const MyOrders = () => {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get("https://ecommerce-backend-291k.onrender.com/api/orders/myorders", {
+      const res = await axios.get("https://ecommercebackend-grx8.onrender.com/api/orders/myorders", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setOrders(res.data);
