@@ -1,13 +1,19 @@
+// pages/ProductDetails.js
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchProductById } from "../api/products";
 import { addToCart } from "../api/cart";
 import { toast } from "react-toastify";
+
 function ProductDetails() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [adding, setAdding] = useState(false);
+
+  const token = localStorage.getItem("token");
+  const isLoggedIn = !!token;
+
   useEffect(() => {
     const loadProduct = async () => {
       try {
@@ -58,9 +64,13 @@ function ProductDetails() {
               setAdding(false);
             }
           }}
-          disabled={adding}
+          disabled={!isLoggedIn || adding}
         >
-          {adding ? "Adding..." : "Add to Cart"}
+          {!isLoggedIn
+            ? "Login to Add to Cart"
+            : adding
+            ? "Adding..."
+            : "Add to Cart"}
         </button>
       </div>
     </div>

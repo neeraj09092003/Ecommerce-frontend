@@ -1,10 +1,15 @@
-// src/api/cart.js
-import API from "./axios";
+// api/cart.js
+import axios from "axios";
 
-export const addToCart = async (productId, quantity = 1) => {
-  const { data } = await API.post("/cart", {
-    productId,
-    quantity,
-  });
-  return data;
+export const addToCart = async (productId, quantity) => {
+  const token = localStorage.getItem("token");
+  return await axios.post(
+    "/cart",
+    { productId, quantity },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
 };
